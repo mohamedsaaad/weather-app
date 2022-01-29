@@ -4,6 +4,7 @@ const app=express()
 const hbs=require('hbs')
 const geoCode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
+const port=process.env.PORT || 3000
 
 
 publicDirectoryPath=path.join(__dirname,'../public')
@@ -75,6 +76,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('server is running...');
+app.listen(port,()=>{
+    console.log('server is running in port...' + port);
 })
